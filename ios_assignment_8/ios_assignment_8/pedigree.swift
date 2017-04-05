@@ -30,4 +30,13 @@ class Pedigree {
     func getFamilyArray() -> [Individual] {
         return self.family
     }
+    
+    func getMemberForId(_ id:Int) -> Individual? {
+        for person in family {
+            if person.getId() == id {
+                return person
+            }
+        }
+        return nil
+    }
 }

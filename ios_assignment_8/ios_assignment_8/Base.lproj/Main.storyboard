@@ -55,7 +55,7 @@
                     <navigationItem key="navigationItem" title="Pedigrees" id="5ai-gC-fUM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yZd-J4-OMF">
                             <connections>
-                                <segue destination="Vne-J9-xtq" kind="show" id="GD6-kK-BVb"/>
+                                <segue destination="Vne-J9-xtq" kind="show" identifier="addMember" id="GD6-kK-BVb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -212,6 +212,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="diseaseSwitch" destination="oAp-cg-sAi" id="psi-nY-OdG"/>
+                        <outlet property="fatherField" destination="FO0-GB-Tch" id="oEy-Cy-tLi"/>
+                        <outlet property="firstNameField" destination="1Af-Qe-hte" id="5Go-3E-Wtq"/>
+                        <outlet property="genderField" destination="EhY-Jm-Urn" id="WTN-jE-MYz"/>
+                        <outlet property="idField" destination="2Tr-jQ-ULO" id="xCG-Wn-O3p"/>
+                        <outlet property="lastNameField" destination="QFB-jC-c5R" id="kFD-zn-gCs"/>
+                        <outlet property="motherField" destination="4BM-1f-bo7" id="6Kh-yN-4VN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Omq-tP-yqQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,7 +235,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="familyMemberCell" textLabel="NbS-g6-soz" detailTextLabel="9KD-s2-nip" style="IBUITableViewCellStyleSubtitle" id="fuW-BL-9XT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="familyMemberCell" textLabel="NbS-g6-soz" detailTextLabel="9KD-s2-nip" style="IBUITableViewCellStyleSubtitle" id="fuW-BL-9XT" customClass="MemberTableViewCell" customModule="ios_assignment_8" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fuW-BL-9XT" id="8Gc-cr-xsW">
@@ -250,7 +259,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Vne-J9-xtq" kind="show" id="lY6-MG-3pe"/>
+                                    <segue destination="Vne-J9-xtq" kind="show" identifier="editMember" id="lY6-MG-3pe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

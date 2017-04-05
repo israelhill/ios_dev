@@ -42,11 +42,12 @@ class FamilyTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "familyMemberCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "familyMemberCell", for: indexPath) as! MemberTableViewCell
         let row = indexPath.row
         let member = family[row]
         cell.textLabel?.text = member.fullName()
         cell.detailTextLabel?.text = member.printParents()
+        cell.member = member
         return cell
     }
     
@@ -86,14 +87,26 @@ class FamilyTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let memberCell = sender as! MemberTableViewCell
+        if segue.identifier == "editMember" {
+            let editViewController = segue.destination as! EditAddViewController
+            print("Name \(memberCell.member?.fullName())")
+            editViewController.member = memberCell.member
+            editViewController.mode = "edit"
+        }
     }
-    */
+ 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
 }
