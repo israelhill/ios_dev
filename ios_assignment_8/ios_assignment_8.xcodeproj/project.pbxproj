@@ -12,10 +12,10 @@
 		5818505A1E949BA800B2FA2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581850591E949BA800B2FA2A /* Assets.xcassets */; };
 		5818505D1E949BA800B2FA2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5818505B1E949BA800B2FA2A /* LaunchScreen.storyboard */; };
 		581850671E949D6A00B2FA2A /* pedigree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581850661E949D6A00B2FA2A /* pedigree.swift */; };
-		581850691E949D9600B2FA2A /* individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581850681E949D9600B2FA2A /* individual.swift */; };
 		5818506B1E94A5F700B2FA2A /* MyTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5818506A1E94A5F700B2FA2A /* MyTableTableViewController.swift */; };
 		5818506D1E954BD300B2FA2A /* FamilyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5818506C1E954BD300B2FA2A /* FamilyTableViewController.swift */; };
 		5818506F1E9565E900B2FA2A /* EditAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5818506E1E9565E900B2FA2A /* EditAddViewController.swift */; };
+		581850711E9572D200B2FA2A /* individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581850701E9572D200B2FA2A /* individual.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +26,10 @@
 		5818505C1E949BA800B2FA2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5818505E1E949BA800B2FA2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581850661E949D6A00B2FA2A /* pedigree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pedigree.swift; sourceTree = "<group>"; };
-		581850681E949D9600B2FA2A /* individual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = individual.swift; path = ../individual.swift; sourceTree = "<group>"; };
 		5818506A1E94A5F700B2FA2A /* MyTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableTableViewController.swift; sourceTree = "<group>"; };
 		5818506C1E954BD300B2FA2A /* FamilyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyTableViewController.swift; sourceTree = "<group>"; };
 		5818506E1E9565E900B2FA2A /* EditAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAddViewController.swift; sourceTree = "<group>"; };
+		581850701E9572D200B2FA2A /* individual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = individual.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,6 @@
 		581850511E949BA800B2FA2A /* ios_assignment_8 */ = {
 			isa = PBXGroup;
 			children = (
-				581850681E949D9600B2FA2A /* individual.swift */,
 				5818506E1E9565E900B2FA2A /* EditAddViewController.swift */,
 				581850521E949BA800B2FA2A /* AppDelegate.swift */,
 				5818506A1E94A5F700B2FA2A /* MyTableTableViewController.swift */,
@@ -72,6 +71,7 @@
 				581850591E949BA800B2FA2A /* Assets.xcassets */,
 				5818505B1E949BA800B2FA2A /* LaunchScreen.storyboard */,
 				5818505E1E949BA800B2FA2A /* Info.plist */,
+				581850701E9572D200B2FA2A /* individual.swift */,
 			);
 			path = ios_assignment_8;
 			sourceTree = "<group>";
@@ -148,11 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				581850691E949D9600B2FA2A /* individual.swift in Sources */,
 				5818506D1E954BD300B2FA2A /* FamilyTableViewController.swift in Sources */,
 				581850671E949D6A00B2FA2A /* pedigree.swift in Sources */,
 				5818506B1E94A5F700B2FA2A /* MyTableTableViewController.swift in Sources */,
 				5818506F1E9565E900B2FA2A /* EditAddViewController.swift in Sources */,
+				581850711E9572D200B2FA2A /* individual.swift in Sources */,
 				581850531E949BA800B2FA2A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +315,7 @@
 				581850631E949BA800B2FA2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

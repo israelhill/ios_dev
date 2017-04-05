@@ -5,7 +5,6 @@
 //  Created by Israel Hill on 4/4/17.
 //  Copyright © 2017 Israel Hill. All rights reserved.
 //
-
 import Foundation
 
 class Individual {
@@ -17,7 +16,7 @@ class Individual {
     private var mother:Individual? = nil
     private var father:Individual? = nil
     private var diseaseStatus = false
-
+    
     init(id:Int, firstName:String, lastName:String, gender:String, mother:Individual?,
          father:Individual?, diseaseStatus:Bool) {
         self.id = id
@@ -102,4 +101,3 @@ class Individual {
         return ""
     }
 }
-
