@@ -10,6 +10,7 @@ import UIKit
 
 class FamilyTableViewController: UITableViewController {
     var family = [Individual]()
+    var allMembers = [Individual]()
     
     
     
@@ -48,6 +49,7 @@ class FamilyTableViewController: UITableViewController {
         cell.textLabel?.text = member.fullName()
         cell.detailTextLabel?.text = member.printParents()
         cell.member = member
+        cell.family = self.family
         return cell
     }
     
@@ -100,6 +102,9 @@ class FamilyTableViewController: UITableViewController {
             print("Name \(memberCell.member?.fullName())")
             editViewController.member = memberCell.member
             editViewController.mode = "edit"
+            editViewController.family = self.family
+            editViewController.allMembers = self.allMembers
+
         }
     }
  

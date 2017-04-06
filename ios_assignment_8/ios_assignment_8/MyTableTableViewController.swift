@@ -10,6 +10,7 @@ import UIKit
 
 class MyTableTableViewController: UITableViewController {
     var pedigrees = [Pedigree]()
+    var allMembers = [Individual]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,9 @@ class MyTableTableViewController: UITableViewController {
         ped2.setProband(person: joe)
         ped3.setProband(person: ned)
         pedigrees = [ped1, ped2, ped3]
+        
+        allMembers = [marry, bob, jill, tom, sally, joe, amy, sarah, john, ann, mike, june, dean, ned,
+                                       judy, oscar, emily, kevin, isabella, ashley, billy, sophia, emma]
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -136,6 +140,7 @@ class MyTableTableViewController: UITableViewController {
             let currentIndexPath = self.tableView.indexPathForSelectedRow!
             let row = currentIndexPath.row
             familyTableViewController.family = pedigrees[row].getFamilyArray()
+            familyTableViewController.allMembers = self.allMembers
         }
     }
     

@@ -20,7 +20,8 @@ class EditAddViewController: UIViewController {
     
     var mode:String? = nil
     var member:Individual? = nil
-    
+    var family = [Individual]()
+    var allMembers = [Individual]()
     
     
     
@@ -36,8 +37,14 @@ class EditAddViewController: UIViewController {
             if member?.getMother() != nil {
                 motherField.text = String(describing: member!.getMother()!.getId())
             }
+            else {
+                motherField.text = "0"
+            }
             if member?.getFather() != nil {
                 fatherField.text = String(describing: member!.getFather()!.getId())
+            }
+            else {
+                fatherField.text = "0"
             }
             if member?.getDiseaseStatus() == true {
                 diseaseSwitch.isOn = true
@@ -45,10 +52,6 @@ class EditAddViewController: UIViewController {
             else {
                 diseaseSwitch.isOn = false
             }
-            
-        }
-        else if mode == "add" && member != nil {
-            
         }
     }
 
@@ -57,19 +60,48 @@ class EditAddViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillDisappear(_ animated : Bool) {
-        super.viewWillDisappear(animated)
-        
-        if (self.isMovingFromParentViewController){
-            // Your code...
-        }
-    }
+//    override func viewWillDisappear(_ animated : Bool) {
+//        super.viewWillDisappear(animated)
+//        
+//        if (self.isMovingFromParentViewController){
+//            // Your code...
+//        }
+//    }
     
-    @IBAction func cancelButtonClicked(_ sender: UIBarButtonItem) {
+    
+    @IBAction func saveClicked(_ sender: UIBarButtonItem) {
+        if self.mode == "add" {
+            addHandler()
+        }
+        else if self.mode == "edit" {
+            editHandler()
+        }
         self.navigationController!.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
 
+    func addHandler() {
+        
+    }
+    
+    func editHandler() {
+        let id = Int(idField.text!)!
+        let firstName = firstNameField.text!
+        let lastName = lastNameField.text!
+        let gender = genderField.text!
+        let motherId = Int(motherField.text!) ?? 0
+        let fatherId = Int(fatherField.text!) ?? 0
+        let mother = Individual.getIndividualForId(allMembers: self.allMembers, id: motherId)
+        let father = Individual.getIndividualForId(allMembers: self.allMembers, id: fatherId)
+        let diseaseStatus = diseaseSwitch.isOn
+        member?.setId(id: id)
+        member?.setFirstName(name: firstName)
+        member?.setLastName(name: lastName)
+        member?.setGender(gender: gender)
+        member?.setMother(mother: mother!)
+        member?.setFather(father: father!)
+        member?.setDiseaseStatus(status: diseaseStatus)
+    }
     /*
     // MARK: - Navigation
 

@@ -10,6 +10,7 @@ import UIKit
 
 class MemberTableViewCell: UITableViewCell {
     var member:Individual? = nil
+    var family = [Individual]()
     
     override func awakeFromNib() {
         super.awakeFromNib()

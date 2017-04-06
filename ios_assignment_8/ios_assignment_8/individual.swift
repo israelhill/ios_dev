@@ -100,4 +100,13 @@ class Individual {
         }
         return ""
     }
+    
+    static func getIndividualForId(allMembers:[Individual], id:Int) -> Individual? {
+        for person in allMembers {
+            if person.getId() == id {
+                return person
+            }
+        }
+        return nil
+    }
 }
