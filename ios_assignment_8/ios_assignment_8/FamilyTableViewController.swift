@@ -9,7 +9,6 @@
 import UIKit
 
 class FamilyTableViewController: UITableViewController {
-    var family = [Individual]()
     var allMembers = [Individual]()
     
     
@@ -101,13 +100,11 @@ class FamilyTableViewController: UITableViewController {
             print("Name \(memberCell.member?.fullName())")
             editViewController.member = memberCell.member
             editViewController.mode = "edit"
-            editViewController.family = self.family
             editViewController.allMembers = self.allMembers
         }
         if segue.identifier == "addMember" {
             let addViewController = segue.destination as! EditAddViewController
             addViewController.mode = "add"
-            addViewController.family = self.family
             addViewController.allMembers = self.allMembers
         }
     }

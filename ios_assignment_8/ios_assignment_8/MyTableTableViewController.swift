@@ -139,9 +139,8 @@ class MyTableTableViewController: UITableViewController {
             let familyTableViewController = segue.destination as! FamilyTableViewController
             let currentIndexPath = self.tableView.indexPathForSelectedRow!
             let row = currentIndexPath.row
-            familyTableViewController.family = pedigrees[row].getFamilyArray()
-            familyTableViewController.allMembers = self.allMembers
             SharedDataSingleton.sharedInstance.family = pedigrees[row].getFamilyArray()
+            familyTableViewController.allMembers = self.allMembers
         }
     }
     

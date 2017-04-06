@@ -20,9 +20,7 @@ class EditAddViewController: UIViewController {
     
     var mode:String? = nil
     var member:Individual? = nil
-    var family = [Individual]()
     var allMembers = [Individual]()
-    
     
     
     override func viewDidLoad() {
