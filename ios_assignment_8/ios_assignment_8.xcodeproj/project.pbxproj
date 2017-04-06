@@ -17,6 +17,7 @@
 		5818506F1E9565E900B2FA2A /* EditAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5818506E1E9565E900B2FA2A /* EditAddViewController.swift */; };
 		581850711E9572D200B2FA2A /* individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581850701E9572D200B2FA2A /* individual.swift */; };
 		581850731E9580AE00B2FA2A /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581850721E9580AE00B2FA2A /* MemberTableViewCell.swift */; };
+		584717D71E96F015005A196A /* SharedDataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584717D61E96F015005A196A /* SharedDataSingleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5818506E1E9565E900B2FA2A /* EditAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAddViewController.swift; sourceTree = "<group>"; };
 		581850701E9572D200B2FA2A /* individual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = individual.swift; sourceTree = "<group>"; };
 		581850721E9580AE00B2FA2A /* MemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
+		584717D61E96F015005A196A /* SharedDataSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedDataSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				5818505E1E949BA800B2FA2A /* Info.plist */,
 				581850701E9572D200B2FA2A /* individual.swift */,
 				581850721E9580AE00B2FA2A /* MemberTableViewCell.swift */,
+				584717D61E96F015005A196A /* SharedDataSingleton.swift */,
 			);
 			path = ios_assignment_8;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584717D71E96F015005A196A /* SharedDataSingleton.swift in Sources */,
 				5818506D1E954BD300B2FA2A /* FamilyTableViewController.swift in Sources */,
 				581850671E949D6A00B2FA2A /* pedigree.swift in Sources */,
 				5818506B1E94A5F700B2FA2A /* MyTableTableViewController.swift in Sources */,

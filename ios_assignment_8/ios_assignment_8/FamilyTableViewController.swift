@@ -13,7 +13,6 @@ class FamilyTableViewController: UITableViewController {
     var allMembers = [Individual]()
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,18 +37,18 @@ class FamilyTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows
-        return self.family.count
+        return SharedDataSingleton.sharedInstance.family.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "familyMemberCell", for: indexPath) as! MemberTableViewCell
         let row = indexPath.row
-        let member = family[row]
+        let member = SharedDataSingleton.sharedInstance.family[row]
         cell.textLabel?.text = member.fullName()
         cell.detailTextLabel?.text = member.printParents()
         cell.member = member
-        cell.family = self.family
+        cell.family = SharedDataSingleton.sharedInstance.family
         return cell
     }
     
@@ -96,15 +95,20 @@ class FamilyTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let memberCell = sender as! MemberTableViewCell
         if segue.identifier == "editMember" {
+            let memberCell = sender as! MemberTableViewCell
             let editViewController = segue.destination as! EditAddViewController
             print("Name \(memberCell.member?.fullName())")
             editViewController.member = memberCell.member
             editViewController.mode = "edit"
             editViewController.family = self.family
             editViewController.allMembers = self.allMembers
-
+        }
+        if segue.identifier == "addMember" {
+            let addViewController = segue.destination as! EditAddViewController
+            addViewController.mode = "add"
+            addViewController.family = self.family
+            addViewController.allMembers = self.allMembers
         }
     }
  

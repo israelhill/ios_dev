@@ -141,6 +141,7 @@ class MyTableTableViewController: UITableViewController {
             let row = currentIndexPath.row
             familyTableViewController.family = pedigrees[row].getFamilyArray()
             familyTableViewController.allMembers = self.allMembers
+            SharedDataSingleton.sharedInstance.family = pedigrees[row].getFamilyArray()
         }
     }
     

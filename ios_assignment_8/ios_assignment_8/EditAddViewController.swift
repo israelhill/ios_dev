@@ -81,7 +81,17 @@ class EditAddViewController: UIViewController {
     }
 
     func addHandler() {
-        
+        let id = Int(idField.text!)!
+        let firstName = firstNameField.text!
+        let lastName = lastNameField.text!
+        let gender = genderField.text!
+        let motherId = Int(motherField.text!) ?? 0
+        let fatherId = Int(fatherField.text!) ?? 0
+        let mother = Individual.getIndividualForId(allMembers: self.allMembers, id: motherId)
+        let father = Individual.getIndividualForId(allMembers: self.allMembers, id: fatherId)
+        let diseaseStatus = diseaseSwitch.isOn
+        let newMember = Individual(id: id, firstName: firstName, lastName: lastName, gender: gender, mother: mother, father: father, diseaseStatus: diseaseStatus)
+        SharedDataSingleton.sharedInstance.family.append(newMember)
     }
     
     func editHandler() {

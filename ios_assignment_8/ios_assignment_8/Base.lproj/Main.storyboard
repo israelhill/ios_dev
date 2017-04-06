@@ -52,13 +52,7 @@
                             <outlet property="delegate" destination="HqN-fb-w4z" id="Wng-at-HgV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pedigrees" id="5ai-gC-fUM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yZd-J4-OMF">
-                            <connections>
-                                <segue destination="Vne-J9-xtq" kind="show" identifier="addMember" id="GD6-kK-BVb"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Pedigrees" id="5ai-gC-fUM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auh-sQ-7zE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -268,7 +262,13 @@
                             <outlet property="delegate" destination="LTk-Ws-6wV" id="BCo-Qt-wUA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Family Members" id="RV1-9K-KB1"/>
+                    <navigationItem key="navigationItem" title="Family Members" id="RV1-9K-KB1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zgc-1W-gU1">
+                            <connections>
+                                <segue destination="Vne-J9-xtq" kind="show" identifier="addMember" id="LNZ-wb-arB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRq-DF-VDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -276,6 +276,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GD6-kK-BVb"/>
+        <segue reference="LNZ-wb-arB"/>
     </inferredMetricsTieBreakers>
 </document>
