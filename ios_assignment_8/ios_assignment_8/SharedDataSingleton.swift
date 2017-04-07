@@ -9,6 +9,9 @@
 import Foundation
 
 class SharedDataSingleton {
+    var currentPed:Pedigree? = nil
     var family:[Individual] = []
+    var pedigrees:[Pedigree] = []
+    var allMembers:[Individual] = []
     static let sharedInstance = SharedDataSingleton()
 }

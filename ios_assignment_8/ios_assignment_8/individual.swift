@@ -60,7 +60,7 @@ class Individual {
         return self.gender
     }
     
-    func setMother(mother:Individual) {
+    func setMother(mother:Individual?) {
         self.mother = mother
     }
     
@@ -68,7 +68,7 @@ class Individual {
         return self.mother
     }
     
-    func setFather(father:Individual) {
+    func setFather(father:Individual?) {
         self.father = father
     }
     

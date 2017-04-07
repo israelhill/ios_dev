@@ -36,18 +36,18 @@ class FamilyTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows
-        return SharedDataSingleton.sharedInstance.family.count
+        return (SharedDataSingleton.sharedInstance.currentPed?.getFamilyArray().count)!
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "familyMemberCell", for: indexPath) as! MemberTableViewCell
         let row = indexPath.row
-        let member = SharedDataSingleton.sharedInstance.family[row]
-        cell.textLabel?.text = member.fullName()
-        cell.detailTextLabel?.text = member.printParents()
+        let member = SharedDataSingleton.sharedInstance.currentPed?.getFamilyArray()[row]
+        cell.textLabel?.text = member?.fullName()
+        cell.detailTextLabel?.text = member?.printParents()
         cell.member = member
-        cell.family = SharedDataSingleton.sharedInstance.family
+        cell.family = (SharedDataSingleton.sharedInstance.currentPed?.getFamilyArray())!
         return cell
     }
     
@@ -100,12 +100,10 @@ class FamilyTableViewController: UITableViewController {
             print("Name \(memberCell.member?.fullName())")
             editViewController.member = memberCell.member
             editViewController.mode = "edit"
-            editViewController.allMembers = self.allMembers
         }
         if segue.identifier == "addMember" {
             let addViewController = segue.destination as! EditAddViewController
             addViewController.mode = "add"
-            addViewController.allMembers = self.allMembers
         }
     }
  

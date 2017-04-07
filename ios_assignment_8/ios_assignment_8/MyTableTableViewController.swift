@@ -55,9 +55,10 @@ class MyTableTableViewController: UITableViewController {
         ped2.setProband(person: joe)
         ped3.setProband(person: ned)
         pedigrees = [ped1, ped2, ped3]
+        SharedDataSingleton.sharedInstance.pedigrees = pedigrees
         
-        allMembers = [marry, bob, jill, tom, sally, joe, amy, sarah, john, ann, mike, june, dean, ned,
-                                       judy, oscar, emily, kevin, isabella, ashley, billy, sophia, emma]
+        allMembers = [marry, bob, jill, tom, sally, joe, amy, sarah, john, ann, mike, june, dean, ned, judy, oscar, emily, kevin, isabella, ashley, billy, sophia, emma]
+        SharedDataSingleton.sharedInstance.allMembers = allMembers
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -88,7 +89,6 @@ class MyTableTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PedigreeCell", for: indexPath)
         let row = indexPath.row
         cell.textLabel?.text = pedigrees[row].getProBand().getLastName()
-
         return cell
     }
  
@@ -139,7 +139,7 @@ class MyTableTableViewController: UITableViewController {
             let familyTableViewController = segue.destination as! FamilyTableViewController
             let currentIndexPath = self.tableView.indexPathForSelectedRow!
             let row = currentIndexPath.row
-            SharedDataSingleton.sharedInstance.family = pedigrees[row].getFamilyArray()
+            SharedDataSingleton.sharedInstance.currentPed = SharedDataSingleton.sharedInstance.pedigrees[row]
             familyTableViewController.allMembers = self.allMembers
         }
     }

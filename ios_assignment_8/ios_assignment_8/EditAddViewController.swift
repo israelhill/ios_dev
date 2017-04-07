@@ -20,7 +20,6 @@ class EditAddViewController: UIViewController {
     
     var mode:String? = nil
     var member:Individual? = nil
-    var allMembers = [Individual]()
     
     
     override func viewDidLoad() {
@@ -79,37 +78,53 @@ class EditAddViewController: UIViewController {
     }
 
     func addHandler() {
+        let allMembers = SharedDataSingleton.sharedInstance.allMembers
         let id = Int(idField.text!)!
         let firstName = firstNameField.text!
         let lastName = lastNameField.text!
         let gender = genderField.text!
         let motherId = Int(motherField.text!) ?? 0
         let fatherId = Int(fatherField.text!) ?? 0
-        let mother = Individual.getIndividualForId(allMembers: self.allMembers, id: motherId)
-        let father = Individual.getIndividualForId(allMembers: self.allMembers, id: fatherId)
+        let mother = Individual.getIndividualForId(allMembers: allMembers, id: motherId)
+        let father = Individual.getIndividualForId(allMembers: allMembers, id: fatherId)
         let diseaseStatus = diseaseSwitch.isOn
         let newMember = Individual(id: id, firstName: firstName, lastName: lastName, gender: gender, mother: mother, father: father, diseaseStatus: diseaseStatus)
-        SharedDataSingleton.sharedInstance.family.append(newMember)
+
+        SharedDataSingleton.sharedInstance.allMembers.append(newMember)
+        SharedDataSingleton.sharedInstance.currentPed?.add(newMember)
     }
     
     func editHandler() {
+        let allMembers = SharedDataSingleton.sharedInstance.allMembers
         let id = Int(idField.text!)!
         let firstName = firstNameField.text!
         let lastName = lastNameField.text!
         let gender = genderField.text!
         let motherId = Int(motherField.text!) ?? 0
         let fatherId = Int(fatherField.text!) ?? 0
-        let mother = Individual.getIndividualForId(allMembers: self.allMembers, id: motherId)
-        let father = Individual.getIndividualForId(allMembers: self.allMembers, id: fatherId)
+        let mother = Individual.getIndividualForId(allMembers: allMembers, id: motherId)
+        let father = Individual.getIndividualForId(allMembers: allMembers, id: fatherId)
         let diseaseStatus = diseaseSwitch.isOn
+        
         member?.setId(id: id)
         member?.setFirstName(name: firstName)
         member?.setLastName(name: lastName)
         member?.setGender(gender: gender)
-        member?.setMother(mother: mother!)
-        member?.setFather(father: father!)
+        if mother != nil {
+            member?.setMother(mother: mother!)
+        }
+        else {
+            member?.setMother(mother: nil)
+        }
+        if father != nil {
+            member?.setFather(father: father!)
+        }
+        else {
+            member?.setFather(father: nil)
+        }
         member?.setDiseaseStatus(status: diseaseStatus)
     }
+    
     /*
     // MARK: - Navigation
 
